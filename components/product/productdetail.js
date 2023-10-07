@@ -74,5 +74,4 @@ export default function ProductPage(props) {
 
 {/*
 WhatsApp icon by Icons8 | https://icons8.com/icon/BPvo4DAyjprS/whatsapp
-
 */}

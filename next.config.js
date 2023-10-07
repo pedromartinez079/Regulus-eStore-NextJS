@@ -5,8 +5,8 @@ module.exports = (phase) => {
     if (phase === PHASE_DEVELOPMENT_SERVER) {
         return {
             env: {
-                MONGODB_USER_DEV: 'nextjs',
-                MONGODB_PASSWORD_DEV: 'YdCCrt7cQrVZ7j3v',
+                MONGODB_USER_DEV: 'regulus',
+                MONGODB_PASSWORD_DEV: '7blBr9qoquYSLXPY',
                 MONGODB_CLUSTER_DEV: 'RegulusEIRL',
             },
             
@@ -17,7 +17,7 @@ module.exports = (phase) => {
         env: {
             MONGODB_USER_PROD: 'user',
             MONGODB_PASSWORD_PROD: 'password',
-            MONGODB_CLUSTER_PROD: 'db',
+            MONGODB_CLUSTER_PROD: 'RegulusEIRL',
         },
         
     };

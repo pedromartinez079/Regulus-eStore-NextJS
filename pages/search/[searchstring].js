@@ -13,9 +13,7 @@ import SearchResult from "@/components/search/results";
 export default function Search() {
   const router = useRouter();
   const searchString = router.query.searchstring;
-  const apiUrl = `/api/products?search=${searchString}`
-
-  //console.log(apiUrl);
+  const apiUrl = `/api/products?search=${searchString}`;
 
   let pageHead = (
       <Head>
@@ -35,25 +33,29 @@ export default function Search() {
   
   useEffect(() => {
     if (data) {
-      setResults(data);
+      if (data.products.length === 0) { setResults(null); }
+      else { setResults(data); }
     }
   }, [data]);
 
-  if (data === null) return(
+  if (data === null || results === null) return(
     <Fragment>
         {pageHead}
+        <h5 className="m-3">Resultados de búsqueda:</h5>
         <NotFound />
     </Fragment>
     );
   if (error || results.hasOwnProperty("message")) return(
       <Fragment>
           {pageHead}
+          <h5 className="m-3">Resultados de búsqueda:</h5>
           <LoadFailed />
       </Fragment>
       );
   if (!data || results.products === undefined) return (
       <Fragment>
           {pageHead}
+          <h5 className="m-3">Resultados de búsqueda:</h5>
           <div className="row text-center px-5 m-5">
             <button className="btn btn-outline-primary" type="button" disabled>
               <span className="spinner-border spinner-border-sm" aria-hidden="true"></span>

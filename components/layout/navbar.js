@@ -10,8 +10,10 @@ export default function NavBar(props) {
         let slug = slugRef.current.value;
 
         if (!/\S/.test(slug)) { slug = undefined; }
-        if (slug[0] === '#' || slug[0] === '%' || slug[0] === '/' ||
+        else {
+            if (slug[0] === '#' || slug[0] === '%' || slug[0] === '/' ||
             slug[0] === '?' || slug[0] === '\\') { slug = undefined; }
+        }
         
         if (slug) { props.onSearch(slug); }        
     }
@@ -55,7 +57,7 @@ export default function NavBar(props) {
                     </ul>
                     <form className="d-flex col-8" role="search" onSubmit={submitHandler}>
                         <input className="form-control me-0" id="search" type="search" placeholder="" aria-label="Search" ref={slugRef}/>
-                        <button className="btn btn-outline-info" type="submit">Search</button>
+                        <button className="btn btn-outline-info" type="submit">Buscar</button>
                     </form>
                 </div>
             </div>

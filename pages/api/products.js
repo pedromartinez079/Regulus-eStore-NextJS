@@ -19,7 +19,7 @@ export default async function handler(req, res) {
     if (search !== undefined) {
         filter = {$text: {$search: search}}, {score: {$meta:"textScore"}};
         sort = {score: {$meta: "textScore"}};
-        console.log(`filter for a search: ${search}`);
+        // console.log(`filter for a search: ${search}`);
     }    
     
     let client;
@@ -41,7 +41,7 @@ export default async function handler(req, res) {
             }
         } else {
             try { 
-                const products = await searchDocuments(client, 'Deltron', sort, filter, 10);
+                const products = await searchDocuments(client, 'Deltron', sort, filter, 15);
                 res.status(200).json({ products: products });
             } catch (error) {
                 client.close();

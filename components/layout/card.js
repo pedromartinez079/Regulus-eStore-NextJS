@@ -1,6 +1,3 @@
-import Link from 'next/link';
-import Image from 'next/image'
-
 import ProductModal from '../product/productModal';
 
 export default function Card(props) {    
@@ -11,7 +8,6 @@ export default function Card(props) {
         <div className="col">
             <div className="card shadow-sm" data-bs-toggle="modal" data-bs-target={"#"+props.product.code}>
                 <img className="img-fluid" alt="Product image" src={imagePath} />
-                {/*<Image src={imagePath} alt="Product image" width={500} height={500} />*/}
                 <div className="card-body">
                     <p className="card-text">
                         <span className="text-info text-decoration-none">{ props.product.title }</span>

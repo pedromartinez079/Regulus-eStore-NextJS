@@ -34,11 +34,14 @@ export default function Product() {
       
     useEffect(() => {
       if (data) {
-        setProduct(data);
+        if (data.hasOwnProperty("message")) { setProduct(data); }
+        else { if (data.products.length === 0) { setProduct(null); }
+                else { setProduct(data); }
+        }
       }
     }, [data]);
 
-    if (data === null) return(
+    if (data === null || product === null) return(
         <Fragment>
             {pageHead}
             <NotFound />

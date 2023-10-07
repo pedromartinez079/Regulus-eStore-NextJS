@@ -30,10 +30,6 @@ export default function Loading() {
             </div>
             <div className="d-flex justify-content-center m-2">
                 <span className="fw-lighter fs-6">Page icons by <Link href='https://icons8.com/'>Icons8</Link></span>
-                {/*<button className="btn btn-outline-primary" type="button" disabled>
-                    <span className="spinner-border spinner-border-sm" aria-hidden="true"></span>
-                    <span role="status">Loading...</span>
-                    </button>*/}
             </div>
         </div>       
     );

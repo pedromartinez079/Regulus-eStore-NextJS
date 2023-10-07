@@ -35,11 +35,14 @@ export default function Category() {
   
   useEffect(() => {
     if (data) {
-      setProducts(data);
+      if (data.hasOwnProperty("message")) { setProducts(data); }
+      else { if (data.products.length === 0) { setProducts(null); }
+              else { setProducts(data); }
+      }
     }
   }, [data]);
 
-  if (data === null) return(
+  if (data === null || products === null) return(
     <Fragment>
         {pageHead}
         <NotFound />
