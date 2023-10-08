@@ -34,6 +34,8 @@ export default async function handler(req, res) {
             try { 
                 const products = await getDocuments(client, 'Deltron', sort, filter);
                 res.status(200).json({ products: products });
+                client.close();
+                return;
             } catch (error) {
                 client.close();
                 res.status(500).json({message: 'Product Lines could not be fetched!'});

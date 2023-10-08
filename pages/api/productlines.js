@@ -12,6 +12,8 @@ export default async function handler(req, res) {
         try { 
             const productlines = await getDocuments(client, 'ProductLines', {name: 1}, {});
             res.status(200).json({ categories: productlines });
+            client.close();
+            return;
         } catch (error) {
             client.close();
             res.status(500).json({message: 'Product Lines could not be fetched!'});
