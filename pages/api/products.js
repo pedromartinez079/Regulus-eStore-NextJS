@@ -45,6 +45,8 @@ export default async function handler(req, res) {
             try { 
                 const products = await searchDocuments(client, 'Deltron', sort, filter, 15);
                 res.status(200).json({ products: products });
+                client.close();
+                return;
             } catch (error) {
                 client.close();
                 res.status(500).json({message: 'Search operation failed!'});
