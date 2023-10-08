@@ -9,7 +9,7 @@ A gallery of products Regulus EIRL can provide. This application was developed u
 
  - [Vercel](https://vercel.com/)
 
- 
+
 ## Authors
 
 - [Pedro L. Martinez La Rosa](https://www.linkedin.com/in/pedro-martinezlr/?locale=en_US)
@@ -24,3 +24,5 @@ A gallery of products Regulus EIRL can provide. This application was developed u
 
 [Repository](https://github.com/pedromartinez079/nextjs-Regulus-eStore)
 
+
+## END
