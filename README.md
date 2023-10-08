@@ -17,7 +17,7 @@ A gallery of products Regulus EIRL can provide. This application was developed u
 
 ## Demo
 
-[Application live on Vercel](htts://#)
+[Application live on Vercel](https://regulus-store.vercel.app/)
 
 
 ## Documentation
