@@ -8,6 +8,8 @@ A gallery of products Regulus EIRL can provide. This application was developed u
  - [MongoDB Atlas](https://www.mongodb.com/)
 
  - [Vercel](https://vercel.com/)
+
+ 
 ## Authors
 
 - [Pedro L. Martinez La Rosa](https://www.linkedin.com/in/pedro-martinezlr/?locale=en_US)
