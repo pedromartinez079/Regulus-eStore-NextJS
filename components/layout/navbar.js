@@ -31,7 +31,7 @@ export default function NavBar(props) {
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">                        
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Categories
+                                Categorías
                             </a>
                             <ul className="dropdown-menu">
                                 <li><hr className="dropdown-divider" /></li>
