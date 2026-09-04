@@ -2,6 +2,7 @@ import ProductModal from '../product/productModal';
 
 export default function Card(props) {    
     let imagePath = props.product.images[0];
+    const fallbackImagePath = '/images/under-construction.jpg';
     if (
         !props.product.images[0].includes('on-line') &&
         !props.product.images[0].includes('carrusel')
@@ -10,7 +11,10 @@ export default function Card(props) {
     return(
         <div className="col">
             <div className="card shadow-sm" data-bs-toggle="modal" data-bs-target={"#"+props.product.code}>
-                <img className="img-fluid" alt="Product image" src={imagePath} />
+                <img 
+                    className="img-fluid" alt="Product image" src={imagePath}
+                    onError={(event) => event.currentTarget.src = fallbackImagePath} 
+                />
                 <div className="card-body">
                     <p className="card-text">
                         <span className="text-info text-decoration-none">{ props.product.title }</span>
