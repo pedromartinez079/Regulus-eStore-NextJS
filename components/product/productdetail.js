@@ -9,8 +9,15 @@ export default function ProductPage(props) {
                     <div className="col-md-5 col-lg-5 order-md-first bg-light">            
                         {props.information.images.map((imageUrl) => {
                             let imagePath = imageUrl;
-                            if (!imageUrl.includes('on-line')) { imagePath = '/images/under-construction.jpg' }
-                            return(<img key={imagePath} className="img-fluid" alt="Product image" src={imagePath} />);                            
+                            const fallbackImagePath = '/images/under-construction.jpg';
+                            if (!imageUrl.includes('on-line') &&
+                                !imageUrl.includes('carrusel')
+                            ) { imagePath = '/images/under-construction.jpg' }
+                            return(
+                                <img key={imagePath} className="img-fluid" alt="Product image" src={imagePath}
+                                    onError={(event) => event.currentTarget.src = fallbackImagePath}
+                                />
+                            );                            
                         })}
                     </div>
                     <div className="col-md-7 col-lg-7 ps-md-3 ps-lg-5">
