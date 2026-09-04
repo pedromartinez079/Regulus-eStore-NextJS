@@ -2,7 +2,10 @@ import ProductModal from '../product/productModal';
 
 export default function Card(props) {    
     let imagePath = props.product.images[0];
-    if (!props.product.images[0].includes('on-line')) { imagePath = '/images/under-construction.jpg' }
+    if (
+        !props.product.images[0].includes('on-line') &&
+        !props.product.images[0].includes('carrusel')
+    ) { imagePath = '/images/under-construction.jpg' }
 
     return(
         <div className="col">
