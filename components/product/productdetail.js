@@ -6,7 +6,7 @@ export default function ProductPage(props) {
         <div className="container">
             <div className="pt-5">
                 <div className="row g-3">
-                    <div className="col-md-5 col-lg-5 order-md-first bg-light">            
+                    {/*<div className="col-md-5 col-lg-5 order-md-first bg-light">            
                         {props.information.images.map((imageUrl) => {
                             let imagePath = imageUrl;
                             const fallbackImagePath = '/images/under-construction.jpg';
@@ -19,6 +19,34 @@ export default function ProductPage(props) {
                                 />
                             );                            
                         })}
+                    </div>*/}
+                    <div className="col-md-5 col-lg-5 order-md-first bg-light">
+                        {(props.information.images && Array.isArray(props.information.images) && props.information.images.length > 0) ? (
+                            props.information.images.map((imageUrl, index) => {
+                            let imagePath = imageUrl;
+                            const fallbackImagePath = '/images/under-construction.jpg';
+
+                            if (!imageUrl.includes('on-line') && !imageUrl.includes('carrusel')) {
+                                imagePath = fallbackImagePath;
+                            }
+
+                            return (
+                                <img
+                                key={index} // Use index as key if imagePath is not unique
+                                className="img-fluid"
+                                alt="Product image"
+                                src={imagePath}
+                                onError={(event) => event.currentTarget.src = fallbackImagePath}
+                                />
+                            );
+                            })
+                            ) : (
+                                <img
+                                className="img-fluid"
+                                alt="Fallback image"
+                                src="/images/under-construction.jpg"
+                                />
+                            )}
                     </div>
                     <div className="col-md-7 col-lg-7 ps-md-3 ps-lg-5">
                         <h1 className="mb-0 h4"> { props.information.title } </h1>
