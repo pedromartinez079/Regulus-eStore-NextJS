@@ -15,7 +15,7 @@ export default function Card(props) {
                 {/*<img 
                     className="img-fluid" alt="Product image" src={imagePath}
                     onError={(event) => event.currentTarget.src = fallbackImagePath} 
-                />*/}
+                />
                 <Image
                     className="img-fluid"
                     alt="Product image"
@@ -25,7 +25,7 @@ export default function Card(props) {
                     onError={(event) => event.target.src = fallbackImagePath}
                     placeholder="blur"
                     blurDataURL={fallbackImagePath}
-                />
+                />*/}
                 <div className="card-body">
                     <p className="card-text">
                         <span className="text-info text-decoration-none">{ props.product.title }</span>
