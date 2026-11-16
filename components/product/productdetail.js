@@ -14,7 +14,7 @@ export default function ProductPage(props) {
                                 !imageUrl.includes('carrusel')
                             ) { imagePath = '/images/under-construction.jpg' }
                             return(
-                                <img key={imagePath} className="img-fluid" alt="Product image" src={imagePath}
+                                <img key={imagePath} className="img-fluid" alt="Product image" src={fallbackImagePath}
                                     onError={(event) => event.currentTarget.src = fallbackImagePath}
                                 />
                             );                            
